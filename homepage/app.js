@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mar = document.getElementById('mark')
     const nektext = document.getElementById('nekotext')
     const rightHand2 = document.querySelector('.hand-right2');
+    const social = document.querySelector('.social-right');
     const heading = document.querySelector('h3');
 
     const animations = [];
@@ -84,25 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     animations.push(handAnimation);
 
-    const handAnimation2 = anime({
-        targets: rightHand2,
-        translateX: [1800, 900],
-        easing: 'easeOutQuad',
-        duration: 2000,
-        autoplay: false
-    });
-    animations3.push(handAnimation2);
-
-    const nekotext  = anime({
-        targets: nektext,
-        translateX: [800, -10],
+    // Metin animasyonu
+    const textAnimation = anime({
+        targets: heading,
+        translateX: [-1400, -850],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
         autoplay: false
     });
-
-    animations3.push(nekotext);
+    animations.push(textAnimation);
 
     const handAnimation3 = anime({
         targets: leftHand,
@@ -124,20 +116,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     animations2.push(handAnimation4);
 
-    // Metin animasyonu
-    const textAnimation = anime({
-        targets: heading,
-        translateX: [-1400, -850],
+    const socialanimation = anime({
+        targets: social,
+        translateX: [800, 0],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
         autoplay: false
     });
-    animations.push(textAnimation);
+    animations2.push(socialanimation);
+
+    const handAnimation2 = anime({
+        targets: rightHand2,
+        translateX: [1800, 900],
+        easing: 'easeOutQuad',
+        duration: 2000,
+        autoplay: false
+    });
+    animations3.push(handAnimation2);
+
+    const nekotext = anime({
+        targets: nektext,
+        translateX: [800, -10],
+        opacity: [0, 1],
+        easing: 'easeOutQuad',
+        duration: 2000,
+        autoplay: false
+    });
+
+    animations3.push(nekotext);
+
 
     function updateAnimations() {
         const windowHeight = window.innerHeight;
-        const dcElement = document.getElementById('dc');
+        const dcElement = document.getElementById('strive');
         const dcRect = dcElement.getBoundingClientRect();
         const dcElement2 = document.getElementById('aniline');
         const dcR2 = dcElement2.getBoundingClientRect();

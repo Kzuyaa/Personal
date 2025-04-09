@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -50,23 +53,36 @@
             </div>
         </div>
     </main>
-    <section id="dc3" class="hand-left2 dcs">
-        <p>I do a bit of pixel art, although I'm not talented, I design small gifs and recently I started designing
-            backgrounds.</p>
-        <img src="/img/Canavar Donat.gif" alt="">
-        <span id="aniline"></span>
-    </section>
-    
-    <section id="dc3" class="hand-left2 dcs">
-        <p>I do a bit of pixel art, although I'm not talented, I design small gifs and recently I started designing
-            backgrounds.</p>
-    </section>
-    <img src="/img/Markre.png" alt="" id="mark">
-    <div class="content"> <span id="aniline2" style="position: relative; top: -540px;"></span>
+    <span id="aniline"  style="position: relative; top: -200px;"></span>
+    <div class="PixelSoial">
+        <aside id="pixel" class="hand-left2 dcs">
+            <p>I do a bit of pixel art, although I'm not talented, I design small gifs and recently I started
+                designing
+                backgrounds.</p>
+            <img src="/img/Canavar Donat.gif" alt="">
+
+        </aside>
+        <img src="/img/Markre.png" alt="" id="mark">
+
+        <aside id="social" class="social-right dcs">
+            <p>My Social Media Accounts</p>
+            <ul>
+                <li> <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i>Github</a> </li>
+                <li> <a href="https://www.instagram.com/p_ciell/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i>İnstagram</a></li>
+                <li> <a href="https://x.com/Shitsureen1/with_replies" target="_blank"><i
+                            class="fa-brands fa-x-twitter"></i>Twitter</a> </li>
+                <li> <a href="https://discord.com/" target="_blank"><i class="fa-brands fa-discord"></i>Kzuyaa</a> </li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="content">
+        <span id="aniline2" style="position: relative; top: -350px;"></span>
         <img src="/img/New Piskel (1).png" alt="" class="hand-right2" id="neko">
         <h2 id="nekotext"> <span>This My First Pixel Art</span></h2>
         <div class="container" id="cont">
-            <div id="dc2" class="hand-left dcs">
+            <div id="aboutme" class="hand-left dcs">
                 <h2>About Me</h2>
                 <ul>
                     <p style="width: 400px;">
@@ -83,7 +99,7 @@
                     src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmpkdnFua2x6eGMxY3R4bGZrcDduazQ5eDRnOGltaDkxNXlxazM3ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GkD4U3VfiIbzcBhQNu/giphy.gif"
                     alt="">
             </div>
-            <div id="dc" class="dcs">
+            <div id="strive" class="dcs">
                 <img src="/img/ipng-removebg-preview.png" class="hand hand-right hand-2" />
                 <h3>I strive to be a fullstack programmer</h3>
             </div>
@@ -99,6 +115,7 @@
             <li>🔌 Integration-ready interfaces (API, Backend)</li>
         </ul>
     </section>
+    <button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
 
     <script src="app.js"></script>
 </body>
