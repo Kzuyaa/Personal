@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 animateServicesList();
                 fadeInOnScroll();
+                whatmy();
                 observer.unobserve(entry.target);
             }
         });
@@ -51,9 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function whatmy() {
+
+        const tect = whatif.getBoundingClientRect()
+        const whatif = document.getElementById('Whatismymotivationandpurpose');
+        const windowHeight = window.innerHeight;
+        if (tect.top < windowHeight - 100 && tect.bottom > 0) {
+            const items = whatif.querySelectorAll('li');
+            items.forEach((item, index) => {
+                anime({
+                    targets: item,
+                    opacity: [0, 1],
+                    translateY: [40, 0],
+                    delay: anime.stagger(150 * index), // Animasyonları sırayla başlat
+                    duration: 800,
+                    easing: 'easeOutExpo'
+                });
+            });
+        }
+    }
+
+
     function animateServicesList() {
         const servicesSection = document.getElementById('services');
         const rect = servicesSection.getBoundingClientRect();
+
         const windowHeight = window.innerHeight;
 
         if (rect.top < windowHeight - 100 && rect.bottom > 0) {
