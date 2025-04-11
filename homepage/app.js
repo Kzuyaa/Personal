@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightHand2 = document.querySelector('.hand-right2');
     const social = document.querySelector('.social-right');
     const heading = document.querySelector('h3');
+    const whatif = document.getElementById('Whatismymotivationandpurpose');
 
     const animations = [];
     const animations2 = [];
     const animations3 = [];
+    const animations4 = [];
     let lastScrollY = window.scrollY;
     let ticking = false;
 
@@ -24,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 animateServicesList();
                 fadeInOnScroll();
-                whatmy();
                 observer.unobserve(entry.target);
             }
         });
@@ -51,27 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    function whatmy() {
-
-        const tect = whatif.getBoundingClientRect()
-        const whatif = document.getElementById('Whatismymotivationandpurpose');
-        const windowHeight = window.innerHeight;
-        if (tect.top < windowHeight - 100 && tect.bottom > 0) {
-            const items = whatif.querySelectorAll('li');
-            items.forEach((item, index) => {
-                anime({
-                    targets: item,
-                    opacity: [0, 1],
-                    translateY: [40, 0],
-                    delay: anime.stagger(150 * index), // Animasyonları sırayla başlat
-                    duration: 800,
-                    easing: 'easeOutExpo'
-                });
-            });
-        }
-    }
-
 
     function animateServicesList() {
         const servicesSection = document.getElementById('services');
@@ -166,9 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 2000,
         autoplay: false
     });
-
     animations3.push(nekotext);
-
+    const items = whatif.querySelectorAll('aside');
+    const last = anime({
+        targets: items,
+        opacity: [0, 1],
+        scale: [0.5, 1],
+        translateY: [100, 0],
+        easing: 'easeOutQuad',
+        duration: 2000,
+        autoplay: false
+    });
+    animations4.push(last);
 
     function updateAnimations() {
         const windowHeight = window.innerHeight;
@@ -178,6 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const dcR2 = dcElement2.getBoundingClientRect();
         const dcElement3 = document.getElementById('aniline2');
         const dcR3 = dcElement3.getBoundingClientRect();
+        const what = document.getElementById('aniline3');
+        const tect = what.getBoundingClientRect()
+
+        if (whatif) {
+            if (tect.top < windowHeight && tect.bottom > 0) {
+                const visibilityRatio = 1 - (tect.top / windowHeight);
+
+                animations4.forEach(animation => {
+                    animation.seek(animation.duration * Math.min(visibilityRatio, 1));
+                });
+            }
+        }
 
         if (rightHand) {
             if (dcRect.top < windowHeight && dcRect.bottom > 0) {
@@ -254,3 +255,45 @@ function ah() {
 
 //!Miku Hearts
 
+//! Canvas Animation
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+let pixels = [];
+
+for (let i = 0; i < 200; i++) {
+    pixels.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speed: Math.random() * 0.5 + 0.2,
+        color: `hsl(${Math.random() * 360}, 100%, 70%)`
+    });
+}
+
+function animatePixels() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let pixel of pixels) {
+        ctx.beginPath();
+        ctx.arc(pixel.x, pixel.y, pixel.size, 0, Math.PI * 2);
+        ctx.fillStyle = pixel.color;
+        ctx.fill();
+        pixel.y += pixel.speed;
+        if (pixel.y > canvas.height) {
+            pixel.y = 0;
+            pixel.x = Math.random() * canvas.width;
+        }
+    }
+    requestAnimationFrame(animatePixels);
+}
+animatePixels();
+
+
+//! Canvas Animation

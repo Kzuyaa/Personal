@@ -8,8 +8,20 @@ body {
     background-color: #58595e;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHI1cWIxMGxraWk2czRmNzRmaDhhbXI1b25xeHVmN2FsbzB3ZnF2cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CBiAhHAkp79Cmc/giphy.gif);
+    background-image: url(/img/ChatGPT\ Image\ 10\ Nis\ 2025\ 21_43_24.png);
+    background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
 }
 
 #backToTop {
@@ -31,7 +43,7 @@ body {
 
 
 header {
-    background-color: #6c7072;
+    background-color: #6c707252;
 }
 
 nav ul {
@@ -42,9 +54,10 @@ nav ul {
 }
 
 nav ul img {
-    width: 75px;
-    height: auto;
+    width: 55px;
+    height: 55px;
     border-radius: 75px;
+    align-self: center;
 }
 
 nav ul li {
@@ -53,7 +66,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    background-color: #333;
+    background-color: #6c707252;
     cursor: pointer;
 }
 
@@ -179,18 +192,21 @@ main {
 .social-right {
     position: relative;
     display: flex;
-    width: 400px;
-    height: 200px;
     flex-direction: column;
+    align-items: start;
+    width: 800px;
+    height: 400px;
     top: -50px;
     font-size: 18px;
+    text-align: center;
     padding: 30px;
-    border: 2px solid white;
+    border: 2px solid rgb(255, 0, 0);
     border-radius: 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 .social-right p {
@@ -202,27 +218,32 @@ main {
 
 .social-right ul {
     list-style: none;
-    display: flex;
-    flex-direction: row;
     padding: 0;
 }
 
 .social-right ul li {
-    margin: 15px;
+    margin: 5px;
 }
 
 .social-right ul li a {
     text-decoration: none;
     display: flex;
-    flex-direction: column;
-    color: #ff0000;
-    font-size: 18px;
+    flex-direction: row;
+    color: #a5a5a5;
+    font-size: 22px;
+    padding: 10px;
     transition: color 0.3s ease;
 }
 
 .social-right ul li a:hover {
-    color: #007bff;
+    color: #00c3ff;
     /* Hover rengi */
+}
+
+.social-right ul li a i {
+    margin-right: 10px;
+    font-size: 30px;
+    color: #ffee00;
 }
 
 .dcs {
@@ -235,22 +256,26 @@ main {
 }
 
 #pixel {
-    width: 500px;
+    width: 800px;
+    height: 400px;
     justify-content: space-around;
+    flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     top: -50px;
-    height: auto;
-    font-size: 18px;
+    font-size: 22px;
     padding: 30px;
-    border: 2px solid white;
+    border: 2px solid rgb(255, 0, 0);
     border-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 
 #pixel img {
-    width: 134px;
-    height: 134px;
+    align-self: flex-end;
+    width: 164px;
+    height: 164px;
 }
 
 #mark {
@@ -307,14 +332,14 @@ main {
 }
 
 #aboutme {
-    width: 400px;
+    width: 500px;
     justify-content: start;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     top: -50px;
     left: 500px;
     height: auto;
-    font-size: 18px;
+    font-size: 20px;
     padding: 30px;
     border: 2px solid white;
     border-radius: 50px;
@@ -332,8 +357,34 @@ main {
     margin-top: 10px;
 }
 
+#aboutme ul li i {
+    margin-right: 10px;
+    font-size: 30px;
+}
 
+.fa-html5 {
+    color: #ffa600;
+}
 
+.fa-css3 {
+    color: #00c3ff;
+}
+
+.fa-js {
+    color: #fbff00;
+}
+
+.fa-c {
+    color: #e100ff;
+}
+
+.fa-c::after {
+    content: "#";
+}
+
+.fa-node {
+    color: #00ff9f;
+}
 
 /**Content*/
 
@@ -377,8 +428,9 @@ main {
 /*! Motivation and Purpose*/
 
 .motivationpurp {
-    background-image: url(/img/Frame\ 1\(2\).png);
+    /* background-image: url(/img/Frame\ 1\(2\).png); */
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -387,7 +439,6 @@ main {
     margin-top: 80px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     color: white;
-
 }
 
 .motivationpurp h1 {
@@ -417,8 +468,88 @@ main {
     margin-top: 10px;
 }
 
-#altimg{
+#altimg {
     position: absolute;
 }
 
 /*! Motivation and Purpose*/
+
+/**! Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c1e;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: #00ff9f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+#social2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    font-size: 18px;
+    padding: 30px;
+    border-radius: 50px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+#social2 p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#social2 ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+#social2 ul li {
+    margin: 10px;
+}
+
+#social2 ul li a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #4c00ff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#social2 ul li a:hover {
+    color: #ffffff;
+    /* Hover rengi */
+}
+
+/**! Footer */
