@@ -19,28 +19,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
     width: 100%;
     height: 100%;
 }
-
-#backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #ff7b7b;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#backToTop:hover {
-    background-color: #333;
-}
-
 
 header {
     background-color: #6c707252;
@@ -120,13 +101,13 @@ main {
     border: 1px red solid;
 }
 
-#mikp{
+#mikp {
     width: 500px;
- }
+}
 
- #mikp::after{
+#mikp::after {
     content: '=>';
- }
+}
 
 #aa {
     position: relative;
@@ -143,7 +124,7 @@ main {
 /**Content*/
 
 .content {
-    min-height: 200vh;
+    min-height: 250vh;
     position: relative;
 }
 
@@ -200,10 +181,13 @@ main {
 
 .PixelSoial {
     position: relative;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 1800px;
+    justify-content: center;
+    align-items: center;
+    width: 1400px;
+    height: 500px;
 }
 
 
@@ -212,7 +196,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: start;
-    width: 800px;
+    width: 600px;
     height: 400px;
     top: -50px;
     font-size: 18px;
@@ -274,7 +258,7 @@ main {
 }
 
 #pixel {
-    width: 800px;
+    width: 600px;
     height: 400px;
     justify-content: space-around;
     flex-direction: column;
@@ -301,6 +285,7 @@ main {
     display: flex;
     justify-content: start;
     top: 100px;
+    left: 0;
     width: 400px;
     height: 400px;
     transform: rotate(15deg);
@@ -568,6 +553,7 @@ footer a:hover {
         padding: 100px 20px;
     }
 
+
     .intro {
         flex-direction: column;
         width: 90%;
@@ -575,13 +561,15 @@ footer a:hover {
         text-align: center;
     }
 
-    #mikp{
-       width: 250px;
+    #mikp {
+        width: 250px;
     }
-    #mikp::after{
+
+    #mikp::after {
         content: '↓';
         font-size: 22px;
     }
+
     #aa {
         position: static;
         margin-top: 20px;
@@ -613,14 +601,14 @@ footer a:hover {
     #social p {
         width: 220px;
         font-size: 20px;
-        margin: 0; 
-         margin-top: 10px;
-        font-weight: bold;  
+        margin: 0;
+        margin-top: 10px;
+        font-weight: bold;
     }
 
     #social ul {
         height: 170px;
-    
+
     }
 
     #social ul li {
@@ -637,7 +625,7 @@ footer a:hover {
     }
 
     #social img {
-  margin-top:20px ;
+        margin-top: 20px;
     }
 
     #pixel p {
@@ -734,6 +722,10 @@ footer a:hover {
 
 @media (max-width: 600px) {
 
+    body {
+        overflow-x: hidden;
+    }
+
     .section-blur h2,
     .motivationpurp h1 {
         font-size: 1.5em;
@@ -769,7 +761,10 @@ footer a:hover {
     }
 
     .heart {
-
         left: 120px;
     }
+}
+
+html {
+    overflow-x: hidden;
 }
