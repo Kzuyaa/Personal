@@ -16,6 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScrollY = window.scrollY;
     let ticking = false;
 
+    let screenWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        screenWidth = window.innerWidth;
+    });
+    const rightStartX = screenWidth > 768 ? 1400 : 0;
+    const leftStartX = screenWidth > 768 ? -1200 : -400;
+    const leftStartX2 = screenWidth > 768 ? -400 : -200;
+    const rightHand2StartX = screenWidth > 768 ? 1800 : 600;
+    const nekotextStartX = screenWidth > 768 ? 800 : 200;
+    const textX = screenWidth > 768 ? 1000 : 100;
     //?Services
 
     const servicesSection = document.getElementById('services');
@@ -80,7 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handAnimation = anime({
         targets: rightHand,
-        translateX: [1200, 0],
+        translateX: [rightStartX, 400],
+        translateY: [400, -30],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
@@ -91,7 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Metin animasyonu
     const textAnimation = anime({
         targets: heading,
-        translateX: [-1400, -850],
+        translateY: [textX,0],
+        translateX: [textX,0],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
@@ -101,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handAnimation3 = anime({
         targets: leftHand,
-        translateX: [-1200, -300],
+        translateX: [leftStartX,75],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
@@ -111,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handAnimation4 = anime({
         targets: [leftHand2, mar],
-        translateX: [-400, 400],
+        translateX: [leftStartX2, 200],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
@@ -121,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const socialanimation = anime({
         targets: social,
-        translateX: [800, 0],
+        translateX: [rightHand2StartX, 0],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
@@ -135,12 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'easeOutQuad',
         duration: 2000,
         autoplay: false
-    });
+    }); 
     animations3.push(handAnimation2);
 
     const nekotext = anime({
         targets: nektext,
-        translateX: [800, -10],
+ translateX: [nekotextStartX, -10],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
@@ -161,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateAnimations() {
         const windowHeight = window.innerHeight;
-        const dcElement = document.getElementById('strive');
+        const dcElement = document.getElementById('aniline4');
         const dcRect = dcElement.getBoundingClientRect();
         const dcElement2 = document.getElementById('aniline');
         const dcR2 = dcElement2.getBoundingClientRect();
