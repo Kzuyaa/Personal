@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightStartX = screenWidth > 768 ? 1400 : 0;
     const leftStartX = screenWidth > 768 ? -1200 : -400;
     const leftStartX2 = screenWidth > 768 ? -400 : -200;
-    const rightHand2StartX = screenWidth > 768 ? 1800 : 600;
+    const rightHand2StartX = screenWidth > 768 ? 400 : 600;
     const nekotextStartX = screenWidth > 768 ? 800 : 200;
     const textX = screenWidth > 768 ? 1000 : 100;
     //?Services
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handAnimation4 = anime({
         targets: [leftHand2, mar],
-        translateX: [leftStartX2, 200],
+        translateX: [leftStartX2, 0],
         opacity: [0, 1],
         easing: 'easeOutQuad',
         duration: 2000,
